@@ -9,5 +9,5 @@ cloudinary.config({
 
 const uploadToCloudinary = (LocalUrl) => {
     if (!LocalUrl) return null;
-    
+        
 };
