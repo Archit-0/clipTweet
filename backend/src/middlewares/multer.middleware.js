@@ -9,4 +9,7 @@ const storage = multer.diskStorage({
     },
 });
 
-export const upload = multer({ storage });
+// console.log("Multer middleware loaded", storage);
+const upload = multer({ storage });
+console.log("Upload middleware created", upload.storage);
+export { upload };

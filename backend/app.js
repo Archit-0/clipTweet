@@ -16,7 +16,7 @@ app.use(e.static("public"));
 app.use(cookieParser());
 
 //import all the routes here
-import userRoutes from "./routes/user.routes.js";
+import userRoutes from "./src/routes/user.routes.js";
 
 app.use("/api/v1/users", userRoutes);
 
