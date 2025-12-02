@@ -49,17 +49,17 @@ export const registerUser = asyncHandler(async (req, res) => {
         coverImageUrlLocal = req.files.coverImage[0].path;
     }
 
-    // const avatarUrl = await uploadToCloudinary(avatarUrlLocal);
-    // const coverImageUrl = await uploadToCloudinary(avatarUrlLocal);
+    const avatarUrl = await uploadToCloudinary(avatarUrlLocal);
+    const coverImageUrl = await uploadToCloudinary(avatarUrlLocal);
 
-    // console.log(`avataer ${avatarUrl}   cover : ${coverImageUrl}`);
+    console.log(`avataer ${avatarUrl}   cover : ${coverImageUrl}`);
     const newUser = new User({
         username: username.toLowerCase(),
         email,
         password,
         fullName,
-        avatar: avatarUrlLocal,
-        coverImage: coverImageUrlLocal || null,
+        avatar: avatarUrl.url,
+        coverImage: coverImageUrl.url || null,
     });
     await newUser.save();
     const userById = await User.findById(newUser._id);
