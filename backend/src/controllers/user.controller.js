@@ -71,6 +71,13 @@ export const registerUser = asyncHandler(async (req, res) => {
         .json(
             new ApiResponse(200, "User registered successfully", { userById })
         );
-
-    const coverImage = res.send("User registered successfully");
 });
+
+export const Logic = ()=>{
+    // take user crediential
+    // check user crediential is correct or not 
+
+    const {email , password} = req.body
+    console.log(email);
+    console.log(password)
+}
